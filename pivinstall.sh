@@ -2,6 +2,10 @@
 #Homebrew install
 printf -- 'Installing Hombebrew... \n ' && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
+#Spring Boot CLI Install
+printf -- 'Installing Spring Boot CLI... \n' && \
+brew tap pivotal/tap && \
+brew install springboot && \
 #CF CLI Install
 printf -- 'Installing CF CLI... \n' && \
 brew tap cloudfoundry/tap  && \
@@ -14,13 +18,16 @@ brew tap AdoptOpenJDK/openjdk && \
 brew cask adoptopenjdk8 && \
 #Gradle install
 printf -- 'Installing Gradle... \n ' && \
-brew install gradle
+brew install gradle && \
 #Maven install
 printf -- 'Installing Maven... \n ' && \
-brew install maven
+brew install maven && \
 #Terraform install
 printf -- 'Installing terraform... \n ' && \
-brew install terraform
+brew install terraform && \
+#Docker install
+printf -- 'Installing Docker... \n ' && \
+brew cask install docker && \
 #Fly CLI v5.3.0
 printf -- 'Downloading Fly CLI .tar file... \n' && \
 curl  -OL https://github.com/concourse/concourse/releases/download/v5.3.0/fly-5.3.0-darwin-amd64.tgz && \
