@@ -11,7 +11,7 @@ cf --help && \
 printf -- 'Intalling OpenJDK v8 ... \n'
 brew cask install adoptopenjdk && \
 brew tap AdoptOpenJDK/openjdk && \
-brew cask install OpenJDK8 with Hotspot JVM && \
+brew cask adoptopenjdk8 && \
 #Gradle install
 printf -- 'Installing Gradle... \n ' && \
 brew install gradle
