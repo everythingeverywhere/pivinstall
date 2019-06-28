@@ -16,7 +16,7 @@ brew install maven
 #Terraform install
 printf -- 'Installing terraform... \n ' && \
 brew install terraform
-#Fly CLI
+#Fly CLI v5.3.0
 printf -- 'Downloading Fly CLI .tar file... \n' && \
 curl  -O https://github.com/concourse/concourse/releases/download/v5.3.0/fly-5.3.0-darwin-amd64.tgz && \
 printf -- 'Installing Fly CLI... \n ' && \
