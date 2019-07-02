@@ -1,4 +1,8 @@
 #!/bin/bash
+#Ask user if they want to install PKS
+printf -- 'Would you like to install PKS?' &&\
+read pks-yn &&\
+#If yes now, "Please enter your pivnet key aka UAA API TOKEN in edit profile on pivnet"
 #Homebrew pivinstall
 printf -- 'PivPivinstalling  Hombebrew... \n ' && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
