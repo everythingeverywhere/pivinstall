@@ -11,3 +11,5 @@ A simple bash script for a mac install of
 - Docker for Desktop
 - Fly CLI (Concourse CLI)
 - Kubectl
+
+

@@ -1,44 +1,44 @@
 #!/bin/bash
-#Homebrew install
-printf -- 'Installing Hombebrew... \n ' && \
+#Homebrew pivinstall
+printf -- 'PivPivinstalling  Hombebrew... \n ' && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
-#Spring Boot CLI Install
-printf -- 'Installing Spring Boot CLI... \n' && \
+#Spring Boot CLI pivinstall
+printf -- 'Pivinstalling  Spring Boot CLI... \n' && \
 brew tap pivotal/tap && \
 brew install springboot && \
-#CF CLI Install
-printf -- 'Installing CF CLI... \n' && \
+#CF CLI pivinstall
+printf -- 'Pivinstalling  CF CLI... \n' && \
 brew tap cloudfoundry/tap  && \
 brew install cf-cli  && \
 cf --help && \
-#openJDK8 Install
+#openJDK8 pivinstall
 printf -- 'Intalling OpenJDK v8 ... \n'
 brew cask install adoptopenjdk && \
 brew tap AdoptOpenJDK/openjdk && \
 brew cask adoptopenjdk8 && \
-#Gradle install
-printf -- 'Installing Gradle... \n ' && \
+#Gradle pivinstall
+printf -- 'Pivinstalling  Gradle... \n ' && \
 brew install gradle && \
-#Maven install
-printf -- 'Installing Maven... \n ' && \
+#Maven pivinstall
+printf -- 'Pivinstalling  Maven... \n ' && \
 brew install maven && \
-#Terraform install
-printf -- 'Installing terraform... \n ' && \
+#Terraform pivinstall
+printf -- 'Pivinstalling  terraform... \n ' && \
 brew install terraform && \
-#Docker install
-printf -- 'Installing Docker... \n ' && \
+#Docker pivinstall
+printf -- 'Pivinstalling  Docker... \n ' && \
 brew cask install docker && \
-#Fly CLI v5.3.0
+#Fly CLI v5.3.0 pivinstall
 printf -- 'Downloading Fly CLI .tar file... \n' && \
 curl  -OL https://github.com/concourse/concourse/releases/download/v5.3.0/fly-5.3.0-darwin-amd64.tgz && \
 printf -- 'Unzipping Fly CLI... \n ' && \
 tar -zxvf fly-5.3.0-darwin-amd64.tgz && \
-printf -- 'Moving fly directory to /usr/local/bin/fly \n ...' && \
+printf -- 'Pivinstall by moving fly directory to /usr/local/bin/fly \n ...' && \
 sudo mv fly /usr/local/bin/ && \
 printf -- 'What's the fly version? && \
 fly --version && \
 #Kubectl Install
-printf -- 'Downloading kubeCUTL or kube C. T. L. ... \n' && \
+printf -- 'Pivinstalling kubeCUTL or kube C. T. L. ... \n' && \
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.5/bin/darwin/amd64/kubectl
 chmod +x ./kubectl && \
 sudo mv ./kubectl /usr/local/bin/ && \
