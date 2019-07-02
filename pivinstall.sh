@@ -1,10 +1,16 @@
 #!/bin/bash
-#Ask user if they want to install PKS
-printf -- 'Would you like to install PKS?' &&\
-read pks-yn &&\
+#Ask user if they want to install PKS and save UAA token to a variable to use later
+while true; do
+    read -p "Do you wish to install PKS?" yn
+    case $yn in
+        [Yy]* ) echo 'Enter your UAA API TOKEN'; read pkstoken; break;;
+        [Nn]* ) exit    ;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 #If yes now, "Please enter your pivnet key aka UAA API TOKEN in edit profile on pivnet"
 #Homebrew pivinstall
-printf -- 'PivPivinstalling  Hombebrew... \n ' && \
+printf -- 'Pivinstalling  Hombebrew... \n ' && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
 #Spring Boot CLI pivinstall
 printf -- 'Pivinstalling  Spring Boot CLI... \n' && \
@@ -15,6 +21,13 @@ printf -- 'Pivinstalling  CF CLI... \n' && \
 brew tap cloudfoundry/tap  && \
 brew install cf-cli  && \
 cf --help && \
+#PKS pivinstall
+if [ $pkstoken ]
+then 
+    printf -- 'Pivinstalling  PKS... \n '
+    brew install pivotal/tap/pivnet-cli 
+    pivnet login --api-token=$pkstoken 
+fi
 #openJDK8 pivinstall
 printf -- 'Intalling OpenJDK v8 ... \n'
 brew cask install adoptopenjdk && \
