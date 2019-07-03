@@ -14,13 +14,18 @@ A simple bash script for a mac install of
 - PKS CLI
 
 # How to Use ?
-Make sure you have the UAA API token, you can get this from Pivnet in `Edit Profile`
+- Make sure you have the UAA API token, you can get this from Pivnet in `Edit Profile`
+
+- Homebrew doesn't allow running as root so you will have to enter your password when asked
+
+
+
+Chmod 755 pivinstall.sh 
+Chmod +x pivinstall.sh
 1. Open the terminal
 2. `git clone https://github.com/everythingeverywhere/pivinstall.git`
-3. Login as super user with SUDO to have maximum permission to install files
-4. cd into ./pivinstall 
-5. If you are ready to run the script 
+4. `cd ./pivinstall # go into pivinstall directory`
+5. `Chmod 755 pivinstall.sh #permission for all to read and execute file `
+6. `Chmod +x pivinstall.sh #everyone can get file listing`
+7. If you are ready to run the script 
     - Enter `sh pivinstal.sh` 
-
-
-Chmod 755 pivinstall.sh Chmod +x pivinstall.sh

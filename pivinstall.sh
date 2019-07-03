@@ -5,7 +5,7 @@ while true; do
     case $yn in
     #If yes now, "Please enter your pivnet key aka UAA API TOKEN found in edit profile on pivnet"
         [Yy]* ) echo 'Enter your UAA API TOKEN'; read pkstoken; break;;
-        [Nn]* ) exit    ;;
+        [Nn]* ) break    ;;
         * ) echo "Please answer yes or no.";;
     esac
 done
