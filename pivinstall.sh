@@ -35,14 +35,13 @@ then
         --glob='pks-darwin-*'
     chmod +x pks-darwin-*
     sudo mv ./pks-darwin-* ./pks
-    sudo mv pks /usr/local/bin/pks
     sudo mv ./pks /usr/local/bin
     printf -- 'Pivinstalling kubeCUTL or kube C. T. L. ... \n' 
     pivnet download-product-files \
         --product-slug=pivotal-container-service \
         --release-version=1.4.1 \
         --glob='kubectl-darwin-*'
-    chmod +x kubectl-mac-*
+    chmod +x kubectl-darwin-*
     sudo mv ./kubectl-darwin-* ./kubectl
     sudo mv ./kubectl /usr/local/bin
 fi
