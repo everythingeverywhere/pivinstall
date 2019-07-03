@@ -25,5 +25,4 @@ Make sure you have the UAA API token, you can get this from Pivnet in `Edit Prof
 
 
 # Troubleshooting
-Problem: Script doesn't execute
-Answer: Make it an executable file! `chmod +x pivinstall.sh`
+Script won't execute? Make it an executable file! `chmod +x pivinstall.sh`
