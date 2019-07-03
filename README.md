@@ -40,5 +40,5 @@ A simple bash script for a mac install of
 `spring --version`
 `mvn -v`
 
-- all at once
+# all at once
 `pks --version && cf -v &&  fly -v && kubectl version && docker version && terraform version && gradle -v && java -version && spring --version && mvn -v`
