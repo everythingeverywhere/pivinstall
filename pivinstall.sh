@@ -3,12 +3,12 @@
 while true; do
     read -p "Do you wish to install PKS?" yn
     case $yn in
+    #If yes now, "Please enter your pivnet key aka UAA API TOKEN found in edit profile on pivnet"
         [Yy]* ) echo 'Enter your UAA API TOKEN'; read pkstoken; break;;
         [Nn]* ) exit    ;;
         * ) echo "Please answer yes or no.";;
     esac
 done
-#If yes now, "Please enter your pivnet key aka UAA API TOKEN in edit profile on pivnet"
 #Homebrew pivinstall
 printf -- 'Pivinstalling  Hombebrew... \n ' && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
@@ -21,12 +21,30 @@ printf -- 'Pivinstalling  CF CLI... \n' && \
 brew tap cloudfoundry/tap  && \
 brew install cf-cli  && \
 cf --help && \
-#PKS pivinstall
+PKS pivinstall
 if [ $pkstoken ]
 then 
-    printf -- 'Pivinstalling  PKS... \n '
+    printf -- 'Pivinstalling  Pivnet CLI... \n '
     brew install pivotal/tap/pivnet-cli 
+    printf -- 'Logging into Pivnet with UAA API token... \n '
     pivnet login --api-token=$pkstoken 
+    printf -- 'Downloading and pivinstalling PKS CLI \n '
+    pivnet download-product-files \
+        --product-slug=pivotal-container-service \
+        --release-version=1.4.1 \
+        --glob='pks-darwin-*'
+    chmod +x pks-darwin-*
+    sudo mv ./pks-darwin-* ./pks
+    sudo mv pks-linux-* /usr/local/bin/pks
+    sudo mv ./pks /usr/local/bin
+    printf -- 'Pivinstalling kubeCUTL or kube C. T. L. ... \n' 
+    pivnet download-product-files \
+        --product-slug=pivotal-container-service \
+        --release-version=1.4.1 \
+        --glob='kubectl-darwin-*'
+    chmod +x kubectl-mac-*
+    sudo mv ./kubectl-darwin-* ./kubectlDELETE
+    sudo mv ./kubectlDELETE /usr/local/bin
 fi
 #openJDK8 pivinstall
 printf -- 'Intalling OpenJDK v8 ... \n'
@@ -54,11 +72,6 @@ printf -- 'Pivinstall by moving fly directory to /usr/local/bin/fly \n ...' && \
 sudo mv fly /usr/local/bin/ && \
 printf -- 'What's the fly version? && \
 fly --version && \
-#Kubectl Install
-printf -- 'Pivinstalling kubeCUTL or kube C. T. L. ... \n' && \
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.5/bin/darwin/amd64/kubectl
-chmod +x ./kubectl && \
-sudo mv ./kubectl /usr/local/bin/ && \
-kubectl version && \
 brew cleanup && \
 printf -- 'end of pivinstall.sh script \n'
+printf -- '...Goodbye :) \n'
