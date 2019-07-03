@@ -49,11 +49,5 @@ Script won't execute? Make it an executable file! `chmod +x pivinstall.sh`
 `spring --version`
 `mvn -v`
 
-<<<<<<< HEAD
 # all at once
 `pks --version && cf -v &&  fly -v && kubectl version && docker version && terraform version && gradle -v && java -version && spring --version && mvn -v`
-=======
-- all at once
-`pks --version && cf -v &&  fly -v && kubectl version && docker version && terraform version && gradle -v && java -version && spring --version && mvn -v`
-
->>>>>>> 44321ba15ab69536a851cb0ae842900ee696854d
