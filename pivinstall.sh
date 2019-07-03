@@ -50,7 +50,7 @@ fi
 printf -- 'Intalling OpenJDK v8 ... \n'
 brew cask install adoptopenjdk && \
 brew tap AdoptOpenJDK/openjdk && \
-brew cask adoptopenjdk8 && \
+brew cask install adoptopenjdk8 && \
 #Gradle pivinstall
 printf -- 'Pivinstalling  Gradle... \n ' && \
 brew install gradle && \

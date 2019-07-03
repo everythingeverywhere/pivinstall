@@ -21,3 +21,6 @@ Make sure you have the UAA API token, you can get this from Pivnet in `Edit Prof
 4. cd into ./pivinstall 
 5. If you are ready to run the script 
     - Enter `sh pivinstal.sh` 
+
+
+Chmod 755 pivinstall.sh Chmod +x pivinstall.sh
