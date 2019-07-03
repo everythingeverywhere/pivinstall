@@ -10,11 +10,11 @@ A simple bash script for a mac install of
 - Terraform
 - Docker for Desktop
 - Fly CLI (Concourse CLI)
-- Kubectl
-
+- Kubectl CLI (compatible version with PKS CLI)
+- PKS CLI
 
 # How to Use ?
-
+Make sure you have the UAA API token, you can get this from Pivnet in `Edit Profile`
 1. Open the terminal
 2. `git clone https://github.com/everythingeverywhere/pivinstall.git`
 3. Login as super user with SUDO to have maximum permission to install files

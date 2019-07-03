@@ -35,7 +35,7 @@ then
         --glob='pks-darwin-*'
     chmod +x pks-darwin-*
     sudo mv ./pks-darwin-* ./pks
-    sudo mv pks-linux-* /usr/local/bin/pks
+    sudo mv pks /usr/local/bin/pks
     sudo mv ./pks /usr/local/bin
     printf -- 'Pivinstalling kubeCUTL or kube C. T. L. ... \n' 
     pivnet download-product-files \
@@ -43,8 +43,8 @@ then
         --release-version=1.4.1 \
         --glob='kubectl-darwin-*'
     chmod +x kubectl-mac-*
-    sudo mv ./kubectl-darwin-* ./kubectlDELETE
-    sudo mv ./kubectlDELETE /usr/local/bin
+    sudo mv ./kubectl-darwin-* ./kubectl
+    sudo mv ./kubectl /usr/local/bin
 fi
 #openJDK8 pivinstall
 printf -- 'Intalling OpenJDK v8 ... \n'
