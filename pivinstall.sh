@@ -21,7 +21,7 @@ printf -- 'Pivinstalling  CF CLI... \n' && \
 brew tap cloudfoundry/tap  && \
 brew install cf-cli  && \
 cf --help && \
-PKS pivinstall
+#PKS pivinstall
 if [ $pkstoken ]
 then 
     printf -- 'Pivinstalling  Pivnet CLI... \n '
