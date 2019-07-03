@@ -1,26 +1,47 @@
 #!/bin/bash
+
 #Ask user if they want to install PKS and save UAA token to a variable to use later
 while true; do
     read -p "Do you wish to install PKS?" yn
     case $yn in
     #If yes now, "Please enter your pivnet key aka UAA API TOKEN found in edit profile on pivnet"
-        [Yy]* ) echo 'Enter your UAA API TOKEN'; read pkstoken; break;;
+        [Yy]* ) echo 'Enter your UAA API TOKEN' \n; read pkstoken; break;;
         [Nn]* ) break    ;;
         * ) echo "Please answer yes or no.";;
     esac
 done
+
 #Homebrew pivinstall
 printf -- 'Pivinstalling  Hombebrew... \n ' && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
+
+#Homebrew extension --allows us to install iTerm and Chrome
+brew tap caskroom/cask
+
+#Google Chrome pivinstall
+printf -- 'Pivinstalling  Chrome... \n ' && \
+cd $HOME
+brew cask install google-chrome
+test -d /Applications/"Google Chrome.app"
+
+#iTerm pivinstall
+printf -- 'Pivinstalling  iTerm... \n ' && \
+cd $HOME
+brew cask install iterm2
+brew cask list | grep -q -x iterm2
+
+
 #Spring Boot CLI pivinstall
 printf -- 'Pivinstalling  Spring Boot CLI... \n' && \
 brew tap pivotal/tap && \
 brew install springboot && \
+
 #CF CLI pivinstall
 printf -- 'Pivinstalling  CF CLI... \n' && \
 brew tap cloudfoundry/tap  && \
 brew install cf-cli  && \
 cf --help && \
+
 #PKS pivinstall
 if [ $pkstoken ]
 then 
@@ -45,23 +66,29 @@ then
     sudo mv ./kubectl-darwin-* ./kubectl
     sudo mv ./kubectl /usr/local/bin
 fi
+
 #openJDK8 pivinstall
 printf -- 'Intalling OpenJDK v8 ... \n'
 brew cask install adoptopenjdk && \
 brew tap AdoptOpenJDK/openjdk && \
 brew cask install adoptopenjdk8 && \
+
 #Gradle pivinstall
 printf -- 'Pivinstalling  Gradle... \n ' && \
 brew install gradle && \
+
 #Maven pivinstall
 printf -- 'Pivinstalling  Maven... \n ' && \
 brew install maven && \
+
 #Terraform pivinstall
 printf -- 'Pivinstalling  terraform... \n ' && \
 brew install terraform && \
+
 #Docker pivinstall
 printf -- 'Pivinstalling  Docker... \n ' && \
 brew cask install docker && \
+
 #Fly CLI v5.3.0 pivinstall
 printf -- 'Downloading Fly CLI .tar file... \n' && \
 curl  -OL https://github.com/concourse/concourse/releases/download/v5.3.0/fly-5.3.0-darwin-amd64.tgz && \
@@ -72,5 +99,6 @@ sudo mv fly /usr/local/bin/ && \
 printf -- 'What's the fly version? && \
 fly --version && \
 brew cleanup && \
+
 printf -- 'end of pivinstall.sh script \n'
 printf -- '...Goodbye :) \n'
