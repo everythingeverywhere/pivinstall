@@ -27,7 +27,8 @@ A simple bash script for a mac install of
 7. If you are ready to run the script 
     - Enter `sh pivinstal.sh` 
 
-# To verify install of CLI's
+# To verify install of CLI's 
+- one by one
 `pks --version`
 `cf -v`
 `fly -v`
@@ -38,3 +39,6 @@ A simple bash script for a mac install of
 `java -version`
 `spring --version`
 `mvn -v`
+
+- all at once
+`pks --version && cf -v &&  fly -v && kubectl version && docker version && terraform version && gradle -v && java -version && spring --version && mvn -v`
