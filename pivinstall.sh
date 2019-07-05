@@ -5,14 +5,14 @@ while true; do
     read -p "Do you wish to install PKS?" yn
     case $yn in
     #If yes now, "Please enter your pivnet key aka UAA API TOKEN found in edit profile on pivnet"
-        [Yy]* ) echo 'Enter your UAA API TOKEN' \n; read pkstoken; break;;
+        [Yy]* ) echo 'Enter your UAA API TOKEN \n '; read pkstoken; break;;
         [Nn]* ) break    ;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 #Homebrew pivinstall
-printf -- 'Pivinstalling  Hombebrew... \n ' && \
+printf -- 'Pivinstalling  Homebrew... \n ' && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
 
 #Homebrew extension --allows us to install iTerm and Chrome
@@ -29,7 +29,6 @@ printf -- 'Pivinstalling  iTerm... \n ' && \
 cd $HOME
 brew cask install iterm2
 brew cask list | grep -q -x iterm2
-
 
 #Spring Boot CLI pivinstall
 printf -- 'Pivinstalling  Spring Boot CLI... \n' && \
