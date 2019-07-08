@@ -15,15 +15,18 @@ A simple bash script for a mac install of
 - Google Chrome
 - iTerm
 
+This script is for anyone that needs to install the aforementioned tools. 
+
 # How to Use ?
 Make sure you have the UAA API token, you can get this from Pivnet in `Edit Profile`
-1. Login as a user with sufficient privileges to execute the file. Newly imaged marketing laptops should have sufficient privileges since only a single admin user (UID501) exists.
+1. Login as a user with sufficient privileges to execute the file. 
 2. Open the Terminal.
 3. Clone the script `git clone https://github.com/everythingeverywhere/pivinstall.git`
 4. Run the script `./pivinstall.sh`
 
 
 # Troubleshooting
+Newly imaged marketing laptops should have sufficient privileges since only a single admin user (UID501) exists.
 Script won't execute? Make it an executable file! `chmod +x pivinstall.sh`
 
 - Homebrew doesn't allow running as root so you will have to enter your password when asked
