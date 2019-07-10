@@ -2,12 +2,12 @@
 
 #Ask user if they want to install PKS and save UAA token to a variable to use later
 while true; do
-    read -p "Do you wish to install PKS? y or n:: " yn
+    read -p "Do you wish to install PKS? y or n" yn
     case $yn in
     #If yes now, "Please enter your pivnet key aka UAA API TOKEN found in edit profile on pivnet"
-        [Yy]* ) printf -- 'Enter your UAA API TOKEN'; \n; read pkstoken; break;;
+        [Yy]* ) echo 'Enter your UAA API TOKEN' \n; read pkstoken; break;;
         [Nn]* ) break    ;;
-        * ) printf -- 'Please answer yes or no.'; \n;;
+        * ) echo "Please answer yes or no.";;
     esac
 done
 
