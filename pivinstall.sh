@@ -97,5 +97,95 @@ printf -- 'What's the fly version? && \
 fly --version && \
 brew cleanup && \
 
+#Validate pivinstall
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- 'Verify install of packages \n'
+
+printf -- 'Pivinstalled PKS CLI ? \n'
+pks --version 
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+
+printf -- 'Pivinstalled CF CLI ? \n'
+cf -v 
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+printf -- 'Pivinstalled Fly CLI ? \n'
+fly -v 
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+printf -- 'Pivinstalled kubectl CLI ? \n'
+kubectl version 
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+printf -- 'Pivinstalled Docker ? \n'
+docker version 
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+printf -- 'Pivinstalled terraform CLI ? \n'
+terraform version 
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+printf -- 'Pivinstalled Gradle ? \n'
+gradle -v 
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+printf -- 'Pivinstalled java ? \n'
+java -version 
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+printf -- 'Pivinstalled Spring CLI ? \n'
+spring --version 
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+printf -- 'Pivinstalled maven ? \n'
+mvn -v
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+printf -- '... \n'
+
+
 printf -- 'end of pivinstall.sh script \n'
 printf -- '...Goodbye :) \n'
