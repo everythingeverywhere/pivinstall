@@ -2,7 +2,7 @@
 
 #Ask user if they want to install PKS and save UAA token to a variable to use later
 while true; do
-    read -p "Do you wish to install PKS?" yn
+    read -p "Do you wish to install PKS? y or n" yn
     case $yn in
     #If yes now, "Please enter your pivnet key aka UAA API TOKEN found in edit profile on pivnet"
         [Yy]* ) echo 'Enter your UAA API TOKEN' \n; read pkstoken; break;;
@@ -55,16 +55,14 @@ then
         --release-version=1.4.1 \
         --glob='pks-darwin-*'
     chmod +x pks-darwin-*
-    sudo mv ./pks-darwin-* ./pks
-    sudo mv ./pks /usr/local/bin
+    sudo mv ./pks-darwin-* /usr/local/bin/pksTEST
     printf -- 'Pivinstalling kubeCUTL or kube C. T. L. ... \n' 
     pivnet download-product-files \
         --product-slug=pivotal-container-service \
         --release-version=1.4.1 \
         --glob='kubectl-darwin-*'
     chmod +x kubectl-darwin-*
-    sudo mv ./kubectl-darwin-* ./kubectl
-    sudo mv ./kubectl /usr/local/bin
+    sudo mv ./kubectl-darwin-*  /usr/local/bin/kubectl
 fi
 
 #openJDK8 pivinstall
