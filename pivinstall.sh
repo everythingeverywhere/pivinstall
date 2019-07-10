@@ -15,22 +15,6 @@ done
 printf -- 'Pivinstalling  Hombebrew... \n ' && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
 
-#Homebrew extension --allows us to install iTerm and Chrome
-brew tap caskroom/cask
-
-#Google Chrome pivinstall
-printf -- 'Pivinstalling  Chrome... \n ' && \
-cd $HOME
-brew cask install google-chrome
-test -d /Applications/"Google Chrome.app"
-
-#iTerm pivinstall
-printf -- 'Pivinstalling  iTerm... \n ' && \
-cd $HOME
-brew cask install iterm2
-brew cask list | grep -q -x iterm2
-
-
 #Spring Boot CLI pivinstall
 printf -- 'Pivinstalling  Spring Boot CLI... \n' && \
 brew tap pivotal/tap && \
@@ -86,6 +70,21 @@ brew install terraform && \
 #Docker pivinstall
 printf -- 'Pivinstalling  Docker... \n ' && \
 brew cask install docker && \
+
+#Homebrew extension --allows us to install iTerm and Chrome
+brew tap caskroom/cask && \
+
+#Google Chrome pivinstall
+printf -- 'Pivinstalling  Chrome... \n ' && \
+cd $HOME && \
+brew cask install google-chrome && \
+test -d /Applications/"Google Chrome.app" && \
+
+#iTerm pivinstall
+printf -- 'Pivinstalling  iTerm... \n ' && \
+cd $HOME && \
+brew cask install iterm2 && \
+brew cask list | grep -q -x iterm2 && \
 
 #Fly CLI v5.3.0 pivinstall
 printf -- 'Downloading Fly CLI .tar file... \n' && \
