@@ -39,7 +39,7 @@ then
         --release-version=1.4.1 \
         --glob='pks-darwin-*'
     chmod +x pks-darwin-*
-    sudo mv ./pks-darwin-* /usr/local/bin/pksTEST
+    sudo mv ./pks-darwin-* /usr/local/bin/pks
     printf -- 'Pivinstalling kubeCUTL or kube C. T. L. ... \n' 
     pivnet download-product-files \
         --product-slug=pivotal-container-service \
