@@ -138,6 +138,7 @@ printf -- '... \n'
 printf -- '... \n'
 
 printf -- 'Pivinstalled Docker ? \n'
+open -a /Applications/Docker.app
 docker version 
 printf -- '... \n'
 printf -- '... \n'
