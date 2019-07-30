@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#New line method to increase readability of the script
 new_line(){
     for ((line = 0; line < 5; line++))
         do
@@ -9,16 +10,16 @@ new_line(){
 
 #Ask user if they want to install PKS and save UAA token to a variable to use later
 while true; do
-    read -p "Do you wish to install PKS? y or n" yn
+    read -p "Do you wish to install PKS? y or n: " yn
     case $yn in
     #If yes now, "Please enter your pivnet key aka UAA API TOKEN found in edit profile on pivnet"
-        [Yy]* ) echo 'Enter your UAA API TOKEN \n'; read pkstoken; break;;
-        [Nn]* ) break    ;;
+        [Yy]* ) echo 'Enter your UAA API TOKEN:'; read pkstoken; break;;
+        [Nn]* ) break;;
     esac
 done
 
 #Homebrew pivinstall
-printf -- 'Pivinstalling  Hombebrew... \n ' && \
+printf -- 'Pivinstalling  Homebrew... \n ' && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
 
 #Spring Boot CLI pivinstall
