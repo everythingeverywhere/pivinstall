@@ -130,7 +130,7 @@ printf -- '... \n'
 printf -- '... \n'
 
 printf -- 'Pivinstalled kubectl CLI ? \n'
-kubectl version 
+kubectl version --client=true
 printf -- '... \n'
 printf -- '... \n'
 printf -- '... \n'
