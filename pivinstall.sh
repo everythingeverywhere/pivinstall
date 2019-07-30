@@ -1,5 +1,12 @@
 #!/bin/bash
 
+new_line(){
+    for ((line = 0; line < 5; line++))
+        do
+        printf -- '... \n'
+    done
+}
+
 #Ask user if they want to install PKS and save UAA token to a variable to use later
 while true; do
     read -p "Do you wish to install PKS? y or n" yn
@@ -96,96 +103,61 @@ printf -- 'What's the fly version? && \
 fly --version && \
 brew cleanup && \
 
-#Validate pivinstall
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
+#Install Validation
+new_line
 printf -- 'Verify install of packages \n'
 
+#PKS CLI
+new_line
 printf -- 'Pivinstalled PKS CLI ? \n'
-pks --version 
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
+pks --version
 
-
+#CF CLI
+new_line
 printf -- 'Pivinstalled CF CLI ? \n'
-cf -v 
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
+cf -v
 
+#Fly CLI
+new_line
 printf -- 'Pivinstalled Fly CLI ? \n'
 fly -v 
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
 
+#kubeCTL CLI
+new_line
 printf -- 'Pivinstalled kubectl CLI ? \n'
 kubectl version --client=true
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
 
-printf -- 'Pivinstalled Docker ? \n'
+#Docker
 open -a /Applications/Docker.app
-docker version 
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
+new_line
+printf -- 'Pivinstalled Docker ? \n'
+docker version
 
+#Terraform CLI
+new_line
 printf -- 'Pivinstalled terraform CLI ? \n'
 terraform version 
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
 
+#Gradle
+new_line
 printf -- 'Pivinstalled Gradle ? \n'
-gradle -v 
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
+gradle -v
 
+#JDK8
+new_line
 printf -- 'Pivinstalled java ? \n'
 java -version 
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
 
+#Spring CLI
+new_line
 printf -- 'Pivinstalled Spring CLI ? \n'
 spring --version 
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
 
+#Maven
+new_line
 printf -- 'Pivinstalled maven ? \n'
 mvn -v
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
-printf -- '... \n'
 
-
+new_line
 printf -- 'end of pivinstall.sh script \n'
 printf -- '...Goodbye :) \n'
