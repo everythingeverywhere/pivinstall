@@ -82,10 +82,10 @@ brew cask install docker && \
 brew tap caskroom/cask && \
 
 #Google Chrome pivinstall
-printf -- 'Pivinstalling  Chrome... \n ' && \
-cd $HOME && \
-brew cask install google-chrome && \
-test -d /Applications/"Google Chrome.app" && \
+#printf -- 'Pivinstalling  Chrome... \n ' && \
+#cd $HOME && \
+#brew cask install google-chrome && \
+#test -d /Applications/"Google Chrome.app" && \
 
 #iTerm pivinstall
 printf -- 'Pivinstalling  iTerm... \n ' && \
