@@ -88,10 +88,10 @@ brew tap caskroom/cask && \
 #test -d /Applications/"Google Chrome.app" && \
 
 #iTerm pivinstall
-printf -- 'Pivinstalling  iTerm... \n ' && \
-cd $HOME && \
-brew cask install iterm2 && \
-brew cask list | grep -q -x iterm2 && \
+#printf -- 'Pivinstalling  iTerm... \n ' && \
+#cd $HOME && \
+#brew cask install iterm2 && \
+#brew cask list | grep -q -x iterm2 && \
 
 #Fly CLI v5.3.0 pivinstall
 printf -- 'Downloading Fly CLI .tar file... \n' && \
