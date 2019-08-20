@@ -81,6 +81,10 @@ brew cask install docker && \
 #Homebrew extension --allows us to install iTerm and Chrome
 brew tap caskroom/cask && \
 
+#intelliJ CE pivinstall
+#printf -- 'Pivinstalling  intelliJ... \n ' && \
+#brew cask install intellij-idea-ce && \
+
 #Google Chrome pivinstall
 #printf -- 'Pivinstalling  Chrome... \n ' && \
 #cd $HOME && \
