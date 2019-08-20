@@ -84,6 +84,7 @@ brew tap caskroom/cask && \
 #intelliJ CE pivinstall
 #printf -- 'Pivinstalling  intelliJ... \n ' && \
 #brew cask install intellij-idea-ce && \
+#brew cask list | grep -q -x intellij-idea-ce && \
 
 #Google Chrome pivinstall
 #printf -- 'Pivinstalling  Chrome... \n ' && \
