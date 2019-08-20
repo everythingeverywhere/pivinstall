@@ -14,6 +14,7 @@ A simple bash script for a mac install of
 - PKS CLI
 - Google Chrome
 - iTerm
+- intelliJ
 
 This script is for anyone that needs to install the aforementioned tools. 
 
